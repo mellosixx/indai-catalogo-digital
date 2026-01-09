@@ -7,15 +7,15 @@ interface CategoryTabsProps {
 
 const CategoryTabs = ({ activeCategory, onCategoryChange }: CategoryTabsProps) => {
   return (
-    <div className="sticky top-[68px] z-40 bg-background/95 backdrop-blur-sm border-b border-border py-3 px-4">
+    <div className="sticky top-[48px] sm:top-[68px] z-40 bg-background/95 backdrop-blur-sm border-b border-border py-2 sm:py-3 px-3 sm:px-4">
       <div className="container mx-auto">
-        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+        <div className="flex gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => onCategoryChange(category.id)}
               className={`
-                whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold
+                whitespace-nowrap px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold
                 transition-all duration-200 ease-out
                 ${
                   activeCategory === category.id
